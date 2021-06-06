@@ -1,5 +1,6 @@
 package base;
 import java.util.Scanner;
+import java.util.Calendar;
 /*
 UCF COP3330 Summer 2021 Assignment 1 Solution
 Copyright 2021 Cristiam Enciso
@@ -24,4 +25,23 @@ Handle situations where the program returns a negative number by stating that th
 
 
 public class App {
+    public static void main(String[] args) {
+        Calendar cal = Calendar.getInstance();
+        Scanner in = new Scanner(System.in);
+        System.out.print("What is your current age? ");
+        String age = in.nextLine();
+        System.out.print("At what age would you like to retire? ");
+        String age_retire = in.nextLine();
+
+
+        int i_age = Integer.parseInt(age);
+        int i_retire = Integer.parseInt(age_retire);
+        int time_left = i_retire - i_age;
+        int year = cal.get(Calendar.YEAR);
+        int retire_year = year + time_left;
+
+        System.out.println("You have " + time_left + " years left until you can retire.");
+        System.out.println("It's " + year + "," + " so you can retire in " + retire_year + ".");
+
+    }
 }
